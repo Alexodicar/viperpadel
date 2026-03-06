@@ -134,19 +134,35 @@ window.addEventListener('load', () => {
 });
 
 // -- Form submission (only on reservar page) --
-const reserveForm = document.querySelector('.reserve-form');
+const reserveForm = document.getElementById('reserveForm');
 if (reserveForm) {
   reserveForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
-    btn.textContent = 'Reserva enviada! Te contactamos por WhatsApp';
-    btn.style.background = '#5abf00';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Confirmar Reserva';
-      btn.style.background = '';
-      btn.disabled = false;
-      this.reset();
-    }, 3500);
+
+    const nombre   = (this.nombre.value   || '').trim();
+    const fecha    = (this.fecha.value    || '').trim();
+    const hora     = (this.hora.value     || '').trim();
+    const cancha   = (this.cancha.value   || '').trim();
+    const whatsapp = (this.whatsapp.value || '').trim();
+
+    // Formatear fecha legible: 2026-03-06 → 06/03/2026
+    let fechaLegible = fecha;
+    if (fecha) {
+      const [y, m, d] = fecha.split('-');
+      fechaLegible = `${d}/${m}/${y}`;
+    }
+
+    const mensaje =
+      `¡Hola! Quiero confirmar mi reserva en Viper Pádel Club 🎾\n\n` +
+      `👤 Nombre: ${nombre}\n` +
+      `📅 Fecha: ${fechaLegible}\n` +
+      `⏰ Hora: ${hora}\n` +
+      `🏟️ Cancha: ${cancha}\n` +
+      `📱 Mi WhatsApp: ${whatsapp}`;
+
+    const numero = '525638357341'; // +52 56 3835 7341
+    const url    = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, '_blank');
   });
 }
