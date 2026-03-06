@@ -1,37 +1,41 @@
-// ═══════════════════════════════════════════════════
-//  VIPER PÁDEL CLUB — main.js
-// ═══════════════════════════════════════════════════
+// ===================================================
+//  VIPER PADEL CLUB — main.js
+// ===================================================
 
-// ── Navbar scroll effect ──────────────────────────
+// -- Navbar scroll effect --
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+}
 
-// ── Mobile nav toggle ─────────────────────────────
+// -- Mobile nav toggle --
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  const spans = navToggle.querySelectorAll('span');
-  const isOpen = navLinks.classList.contains('open');
-  spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px, 5px)' : '';
-  spans[1].style.opacity   = isOpen ? '0' : '';
-  spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px, -5px)' : '';
-});
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    const spans = navToggle.querySelectorAll('span');
+    const isOpen = navLinks.classList.contains('open');
+    spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px, 5px)' : '';
+    spans[1].style.opacity   = isOpen ? '0' : '';
+    spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px, -5px)' : '';
+  });
 
-// Close menu on link click
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.querySelectorAll('span').forEach(s => {
-      s.style.transform = ''; s.style.opacity = '';
+  // Close menu on link click
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.querySelectorAll('span').forEach(s => {
+        s.style.transform = ''; s.style.opacity = '';
+      });
     });
   });
-});
+}
 
-// ── Scroll-in animations ──────────────────────────
+// -- Scroll-in animations --
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
@@ -45,11 +49,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
-// ── Particles ─────────────────────────────────────
+// -- Particles (only on homepage) --
 function initParticles() {
-  const canvas = document.createElement('canvas');
   const container = document.getElementById('particles');
   if (!container) return;
+
+  const canvas = document.createElement('canvas');
   container.appendChild(canvas);
   const ctx = canvas.getContext('2d');
 
@@ -90,7 +95,6 @@ function initParticles() {
   function loop() {
     ctx.clearRect(0, 0, W, H);
     particles.forEach(p => { p.update(); p.draw(); });
-    // draw connections
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -112,36 +116,7 @@ function initParticles() {
 }
 initParticles();
 
-// ── Active nav link on scroll ─────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 120) current = s.id;
-  });
-  navItems.forEach(a => {
-    a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--green)' : '';
-  });
-}, { passive: true });
-
-// ── Form submission ───────────────────────────────
-document.querySelector('.reserve-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
-  btn.textContent = '✅ ¡Reserva enviada! Te contactamos por WhatsApp';
-  btn.style.background = '#5abf00';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Confirmar Reserva ⚡';
-    btn.style.background = '';
-    btn.disabled = false;
-    this.reset();
-  }, 3500);
-});
-
-// ── Smooth reveal for hero stats ──────────────────
+// -- Hero stats counter (only on homepage) --
 window.addEventListener('load', () => {
   document.querySelectorAll('.stat-n').forEach((el, i) => {
     const final = el.textContent;
@@ -157,3 +132,21 @@ window.addEventListener('load', () => {
     }, 40 + i * 10);
   });
 });
+
+// -- Form submission (only on reservar page) --
+const reserveForm = document.querySelector('.reserve-form');
+if (reserveForm) {
+  reserveForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Reserva enviada! Te contactamos por WhatsApp';
+    btn.style.background = '#5abf00';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Confirmar Reserva';
+      btn.style.background = '';
+      btn.disabled = false;
+      this.reset();
+    }, 3500);
+  });
+}

@@ -90,6 +90,7 @@ body {
   transition: opacity var(--transition) !important;
 }
 .nav-cta:hover { opacity: .85; }
+.nav-links a.active { color: var(--green); }
 
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
@@ -236,6 +237,60 @@ body {
 .section-title.centered { text-align: center; }
 .section-sub { color: var(--white-70); font-size: 1rem; max-width: 600px; margin-bottom: 3.5rem; }
 .section-sub.centered { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* ══════════════════════════════════
+   PAGE HEADER (subpages)
+══════════════════════════════════ */
+.page-header {
+  padding: calc(var(--nav-h) + 4rem) 0 3rem;
+  background: linear-gradient(180deg, var(--black) 0%, var(--black-2) 100%);
+  border-bottom: 1px solid var(--border);
+}
+.page-header-title {
+  font-family: var(--font-title); font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700; line-height: 1.1; margin-bottom: 1rem;
+}
+.page-header-title em { color: var(--green); font-style: normal; }
+.page-header-sub { color: var(--white-70); font-size: 1.05rem; max-width: 600px; }
+
+/* ══════════════════════════════════
+   VALUES GRID (nosotros)
+══════════════════════════════════ */
+.values-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.value-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 2rem;
+  transition: all var(--transition);
+}
+.value-card:hover { border-color: rgba(127,255,0,0.3); transform: translateY(-4px); }
+.value-number {
+  font-family: var(--font-display); font-size: 2.5rem; color: var(--green);
+  line-height: 1; margin-bottom: 1rem;
+}
+.value-card h3 { font-family: var(--font-title); font-size: 1.2rem; margin-bottom: .75rem; }
+.value-card p { color: var(--white-70); font-size: .9rem; }
+
+/* ══════════════════════════════════
+   QUICK GRID (homepage)
+══════════════════════════════════ */
+.quick-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+}
+.quick-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 2rem;
+  text-decoration: none; color: var(--white);
+  transition: all var(--transition);
+  display: flex; flex-direction: column; gap: .75rem;
+}
+.quick-card:hover { border-color: rgba(127,255,0,0.3); transform: translateY(-4px); }
+.quick-icon { font-size: 2rem; }
+.quick-card h3 { font-family: var(--font-title); font-size: 1.3rem; }
+.quick-card p { color: var(--white-70); font-size: .9rem; flex: 1; }
+.quick-link { color: var(--green); font-family: var(--font-title); font-size: .85rem; letter-spacing: .05em; }
 
 /* ══════════════════════════════════
    ABOUT
@@ -535,6 +590,8 @@ body {
   .courts-grid,
   .programs-grid,
   .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .values-grid,
+  .quick-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .nav-links {
@@ -549,6 +606,8 @@ body {
   .courts-grid,
   .programs-grid,
   .pricing-grid { grid-template-columns: 1fr; }
+  .values-grid,
+  .quick-grid { grid-template-columns: 1fr; }
   .hero-stats { gap: 1.5rem; }
   .stat-n { font-size: 2rem; }
   .liga-promo { flex-direction: column; }
