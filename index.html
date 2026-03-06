@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viper Pádel Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ════════════════ ANUNCIO EVENTO ════════════════ -->
+  <div class="event-modal" id="eventModal" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle">
+    <div class="event-modal-backdrop" id="eventModalBackdrop"></div>
+    <div class="event-modal-card">
+      <button class="event-modal-close" id="eventModalClose" aria-label="Cerrar anuncio">×</button>
+      <h2 class="event-modal-title" id="eventModalTitle">2da Edición · Liga Individual</h2>
+      <img src="assets/images/evento-liga.jpg" alt="Anuncio Liga Individual Viper Pádel Club" class="event-modal-image" />
+      <div class="event-modal-actions">
+        <a href="https://wa.me/526121079889" target="_blank" class="btn btn-primary">Inscribirme por WhatsApp</a>
+        <button class="btn btn-ghost" id="eventModalDismiss">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <!-- Cambia a <img src="assets/images/logo.png"> cuando tengas el archivo -->
+        <span class="logo-text">VIPER <em>PÁDEL</em> <small>CLUB</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#canchas">Canchas</a></li>
+        <li><a href="#clases">Clases</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#reservar" class="nav-cta">Reservar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-logo">
+        <!-- Descomenta cuando tengas el logo PNG:
+        <img src="assets/images/logo.png" alt="Viper Pádel Club" class="hero-logo-img" />
+        -->
+        <div class="hero-logo-text">
+          <span class="viper">VIPER</span>
+          <span class="padel">PÁDEL</span>
+          <span class="club-label">CLUB</span>
+        </div>
+      </div>
+      <h1 class="hero-title">Donde el pádel<br /><em>se vive en serio</em></h1>
+      <p class="hero-sub">Canchas de alto rendimiento · Entrenamiento profesional · Comunidad de élite</p>
+      <div class="hero-actions">
+        <a href="#reservar" class="btn btn-primary">Reserva tu cancha</a>
+        <a href="#nosotros" class="btn btn-ghost">Conoce el club</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-n">5</span><span class="stat-l">Canchas Indoor</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-n">500+</span><span class="stat-l">Jugadores</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-n">12</span><span class="stat-l">Torneos/año</span></div>
+      </div>
+    </div>
+    <a href="#nosotros" class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ════════════════ NOSOTROS ════════════════ -->
+  <section class="section" id="nosotros">
+    <div class="container">
+      <div class="section-label">// SOBRE NOSOTROS</div>
+      <div class="about-grid">
+        <div class="about-text" data-animate>
+          <h2 class="section-title">No es solo un club.<br /><em>Es una forma de jugar.</em></h2>
+          <p>Viper Pádel Club nació con una visión clara: crear el espacio definitivo para jugadores que se toman el pádel en serio. Desde principiantes que buscan aprender, hasta competidores de alto rendimiento, aquí cada partida importa.</p>
+          <p>Nuestras instalaciones de primer nivel, entrenadores certificados y una comunidad apasionada hacen de Viper el lugar donde el pádel realmente se vive.</p>
+          <div class="about-badges">
+            <div class="badge">🏆 Liga Oficial</div>
+            <div class="badge">🎾 Entrenadores Certificados</div>
+            <div class="badge">⚡ Iluminación LED</div>
+            <div class="badge">📱 Reservas Online</div>
+          </div>
+        </div>
+        <div class="about-visual" data-animate>
+          <div class="about-card-big">
+            <div class="about-img-placeholder">
+              <!-- <img src="assets/images/about.jpg" alt="Club" /> -->
+              <div class="img-placeholder-content">
+                <span class="placeholder-icon">🎾</span>
+                <span>Foto del club</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-float-card">
+            <span class="float-icon">🏅</span>
+            <div>
+              <strong>Fundado en 2022</strong>
+              <span>La Paz, BCS — México</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CANCHAS ════════════════ -->
+  <section class="section section-dark" id="canchas">
+    <div class="container">
+      <div class="section-label">// INSTALACIONES</div>
+      <h2 class="section-title centered" data-animate>Canchas de <em>alto rendimiento</em></h2>
+      <p class="section-sub centered" data-animate>Superficie profesional, iluminación de competencia y cristal panorámico en todas las canchas.</p>
+      <div class="courts-grid">
+        <div class="court-card" data-animate>
+          <div class="court-icon">🟩</div>
+          <h3>Canchas Indoor 1 y 2</h3>
+          <p>Superficie de moqueta profesional y condiciones controladas para jugar cómodo todo el año.</p>
+          <ul class="court-features">
+            <li>✓ Moqueta premium</li>
+            <li>✓ Climatización</li>
+            <li>✓ Cristal panorámico</li>
+          </ul>
+        </div>
+        <div class="court-card featured" data-animate>
+          <div class="court-badge">Principal</div>
+          <div class="court-icon">⭐</div>
+          <h3>Canchas Indoor 3 y 4</h3>
+          <p>Canchas de alto nivel para retas y torneos internos con iluminación LED profesional.</p>
+          <ul class="court-features">
+            <li>✓ Iluminación LED competencia</li>
+            <li>✓ Superficie de alto rendimiento</li>
+            <li>✓ Espacio para espectadores</li>
+          </ul>
+        </div>
+        <div class="court-card" data-animate>
+          <div class="court-icon">🏟️</div>
+          <h3>Cancha Indoor 5 (Central)</h3>
+          <p>Nuestra cancha principal indoor para eventos y partidos destacados.</p>
+          <ul class="court-features">
+            <li>✓ Cancha central indoor</li>
+            <li>✓ Excelente visibilidad</li>
+            <li>✓ Disponible 7am–11pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="amenities">
+        <div class="amenity" data-animate><span>🚿</span> Vestidores y regaderas</div>
+        <div class="amenity" data-animate><span>🍺</span> Bar y área de descanso</div>
+        <div class="amenity" data-animate><span>🏪</span> Pro shop</div>
+        <div class="amenity" data-animate><span>🅿️</span> Estacionamiento</div>
+        <div class="amenity" data-animate><span>📷</span> Video análisis</div>
+        <div class="amenity" data-animate><span>📶</span> WiFi Premium</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CLASES ════════════════ -->
+  <section class="section" id="clases">
+    <div class="container">
+      <div class="section-label">// PROGRAMAS DE ENTRENAMIENTO</div>
+      <h2 class="section-title centered" data-animate>Entrena con los <em>mejores</em></h2>
+      <p class="section-sub centered" data-animate>Programas diseñados para todos los niveles. Desde tu primer partido hasta la competencia de élite.</p>
+      <div class="programs-grid">
+        <div class="program-card" data-animate>
+          <div class="program-level beginner">Principiante</div>
+          <h3>Iniciación</h3>
+          <p>Aprende los fundamentos del pádel con nuestros entrenadores certificados. Clases grupales de máximo 4 personas.</p>
+          <div class="program-details">
+            <div class="prog-detail"><span>👥</span> Grupos de 2–4</div>
+            <div class="prog-detail"><span>⏱️</span> 1 hora por sesión</div>
+            <div class="prog-detail"><span>📅</span> Lunes y Miércoles</div>
+          </div>
+          <a href="#contacto" class="btn btn-outline">Inscribirme</a>
+        </div>
+        <div class="program-card featured" data-animate>
+          <div class="program-level intermediate">Intermedio</div>
+          <div class="popular-tag">⚡ Más popular</div>
+          <h3>Desarrollo</h3>
+          <p>Perfecciona técnica, táctica y automatiza patrones de juego. Ideal para jugadores con experiencia básica.</p>
+          <div class="program-details">
+            <div class="prog-detail"><span>👥</span> Grupos de 4</div>
+            <div class="prog-detail"><span>⏱️</span> 1.5 horas</div>
+            <div class="prog-detail"><span>📅</span> Mar, Jue y Sáb</div>
+          </div>
+          <a href="#contacto" class="btn btn-primary">Inscribirme</a>
+        </div>
+        <div class="program-card" data-animate>
+          <div class="program-level advanced">Alto Rendimiento</div>
+          <h3>Competición</h3>
+          <p>Entrenamiento de élite orientado a torneos. Preparación física, mental y táctica al máximo nivel.</p>
+          <div class="program-details">
+            <div class="prog-detail"><span>👥</span> Individual o parejas</div>
+            <div class="prog-detail"><span>⏱️</span> 2 horas</div>
+            <div class="prog-detail"><span>📅</span> Flexible</div>
+          </div>
+          <a href="#contacto" class="btn btn-outline">Inscribirme</a>
+        </div>
+      </div>
+
+      <!-- Liga promo -->
+      <div class="liga-promo" data-animate>
+        <div class="liga-promo-content">
+          <div class="liga-tag">🏆 PRÓXIMO EVENTO</div>
+          <h3>2da Edición · Liga de Pádel Individual</h3>
+          <p>5ta y 6ta Varonil · Inicia Martes 10 de Marzo</p>
+          <div class="liga-info">
+            <span>📅 Martes 7:30 PM – 10:00 PM</span>
+            <span>💰 $1,200 Temporada Regular + $250 Finales</span>
+            <span>🏅 6–8 jornadas · Premios + Trofeo</span>
+          </div>
+          <p class="liga-urgency">⚠️ CUPO LIMITADO — Fecha límite: 8 de Marzo</p>
+        </div>
+        <div class="liga-promo-cta">
+          <a href="https://wa.me/526122136456" target="_blank" class="btn btn-primary btn-lg">
+            <span>📱</span> Inscribirte por WhatsApp
+          </a>
+          <span class="liga-contact">6122136456</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PRECIOS ════════════════ -->
+  <section class="section section-dark" id="precios">
+    <div class="container">
+      <div class="section-label">// MEMBRESÍAS Y PRECIOS</div>
+      <h2 class="section-title centered" data-animate>Elige tu <em>plan</em></h2>
+      <p class="section-sub centered" data-animate>Desde rentar una cancha hasta convertirte en miembro VIP.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card" data-animate>
+          <div class="pricing-header">
+            <span class="pricing-icon">🎾</span>
+            <h3>Por Hora</h3>
+            <div class="pricing-price"><span class="currency">$</span>350<span class="period">/hr</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ Acceso a cualquier cancha</li>
+            <li>✓ Préstamo de paletas</li>
+            <li>✓ Pelotas incluidas</li>
+            <li class="disabled">✗ Sin descuento en clases</li>
+            <li class="disabled">✗ Sin reserva prioritaria</li>
+          </ul>
+          <a href="#reservar" class="btn btn-outline btn-full">Reservar</a>
+        </div>
+        <div class="pricing-card featured" data-animate>
+          <div class="pricing-popular">⭐ Más elegido</div>
+          <div class="pricing-header">
+            <span class="pricing-icon">⚡</span>
+            <h3>Mensualidad</h3>
+            <div class="pricing-price"><span class="currency">$</span>1,800<span class="period">/mes</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ 8 horas de cancha al mes</li>
+            <li>✓ 20% descuento en clases</li>
+            <li>✓ Reserva con 48h anticipación</li>
+            <li>✓ Acceso a torneos internos</li>
+            <li class="disabled">✗ Sin acceso VIP</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary btn-full">Inscribirme</a>
+        </div>
+        <div class="pricing-card" data-animate>
+          <div class="pricing-header">
+            <span class="pricing-icon">👑</span>
+            <h3>VIP Anual</h3>
+            <div class="pricing-price"><span class="currency">$</span>18,000<span class="period">/año</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ Horas ilimitadas de cancha</li>
+            <li>✓ 40% descuento en clases</li>
+            <li>✓ Reserva prioritaria 72h</li>
+            <li>✓ Torneos incluidos</li>
+            <li>✓ Acceso al área VIP y bar</li>
+          </ul>
+          <a href="#contacto" class="btn btn-outline btn-full">Más información</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ RESERVAR ════════════════ -->
+  <section class="section section-accent" id="reservar">
+    <div class="container">
+      <div class="reserve-split">
+        <div class="reserve-text" data-animate>
+          <div class="section-label">// RESERVAS</div>
+          <h2 class="section-title">¿Listo para <em>jugar?</em></h2>
+          <p>Reserva tu cancha en segundos. Elige el día, la hora y el tipo de cancha que prefieras.</p>
+          <div class="reserve-hours">
+            <div class="hour-row">
+              <span class="day">Lunes – Viernes</span>
+              <span class="time">7:00 AM – 11:00 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="day">Sábado – Domingo</span>
+              <span class="time">7:00 AM – 10:00 PM</span>
+            </div>
+          </div>
+        </div>
+        <form class="reserve-form" data-animate>
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Fecha</label>
+              <input type="date" required />
+            </div>
+            <div class="form-group">
+              <label>Hora</label>
+              <select required>
+                <option value="">Selecciona</option>
+                <option>7:00 AM</option><option>8:00 AM</option>
+                <option>9:00 AM</option><option>10:00 AM</option>
+                <option>11:00 AM</option><option>12:00 PM</option>
+                <option>1:00 PM</option><option>2:00 PM</option>
+                <option>3:00 PM</option><option>4:00 PM</option>
+                <option>5:00 PM</option><option>6:00 PM</option>
+                <option>7:00 PM</option><option>8:00 PM</option>
+                <option>9:00 PM</option><option>10:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Cancha</label>
+            <select required>
+              <option value="">Selecciona cancha</option>
+              <option>Cancha Indoor 1</option>
+              <option>Cancha Indoor 2</option>
+              <option>Cancha Indoor 3</option>
+              <option>Cancha Indoor 4</option>
+              <option>Cancha Indoor 5 (Central)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp</label>
+            <input type="tel" placeholder="612 000 0000" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Confirmar Reserva ⚡
+          </button>
+          <p class="form-note">También puedes escribirnos directo al <a href="https://wa.me/526122136456" target="_blank">6122136456</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CONTACTO ════════════════ -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="section-label">// CONTACTO Y UBICACIÓN</div>
+      <h2 class="section-title centered" data-animate>Encuéntranos</h2>
+      <div class="contact-grid">
+        <div class="contact-info" data-animate>
+          <div class="contact-card">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Dirección</strong>
+              <p>La Paz, Baja California Sur, México</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">📱</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <p><a href="https://wa.me/526122136456">(612) 213 6456</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">📸</span>
+            <div>
+              <strong>Instagram</strong>
+              <p><a href="https://www.instagram.com/viper_padelclublpz/" target="_blank">@viper_padelclublpz</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">🕐</span>
+            <div>
+              <strong>Horario</strong>
+              <p>Lunes–Domingo: 7:00 AM – 11:00 PM</p>
+            </div>
+          </div>
+          <a href="https://wa.me/526122136456" target="_blank" class="btn btn-primary btn-full" style="margin-top:1.5rem">
+            💬 Escríbenos por WhatsApp
+          </a>
+        </div>
+        <div class="contact-map" data-animate>
+          <div class="map-placeholder">
+            <span class="map-pin">📍</span>
+            <strong>Viper Pádel Club</strong>
+            <span>La Paz, BCS</span>
+            <a href="https://maps.google.com" target="_blank" class="btn btn-ghost" style="margin-top:1rem">Ver en Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-text">VIPER <em>PÁDEL</em> <small>CLUB</small></div>
+          <p>El pádel en serio, en La Paz.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#canchas">Canchas</a>
+          <a href="#clases">Clases</a>
+          <a href="#precios">Precios</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://wa.me/526122136456" target="_blank" class="social-btn">📱 WhatsApp</a>
+          <a href="https://www.instagram.com/viper_padelclublpz/" target="_blank" class="social-btn">📸 Instagram</a>
+          <a href="#" class="social-btn">👥 Facebook</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Viper Pádel Club · Todos los derechos reservados</span>
+        <span>Hecho con ❤️ en La Paz, BCS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
