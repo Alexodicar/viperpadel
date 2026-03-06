@@ -2,6 +2,25 @@
 //  VIPER PADEL CLUB — main.js
 // ===================================================
 
+// -- Popup Liga Pádel --
+(function () {
+  const overlay = document.getElementById('ligaPopup');
+  const closeBtn = document.getElementById('ligaPopupClose');
+  if (!overlay || !closeBtn) return;
+
+  function closePopup() {
+    overlay.classList.add('hidden');
+  }
+
+  closeBtn.addEventListener('click', closePopup);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closePopup();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closePopup();
+  });
+})();
+
 // -- Navbar scroll effect --
 const navbar = document.getElementById('navbar');
 if (navbar) {
